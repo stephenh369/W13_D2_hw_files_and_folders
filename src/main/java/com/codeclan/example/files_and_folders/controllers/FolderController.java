@@ -21,8 +21,8 @@ public class FolderController {
     }
 
     @GetMapping(value = "/folders/{id}")
-    public ResponseEntity<Folder> getFolder(@PathVariable Long id){
-        return new ResponseEntity(folderRepository.findById(id), HttpStatus.OK);
+    public ResponseEntity getFolder(@PathVariable Long id){
+        return new ResponseEntity<>(folderRepository.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/folders")
