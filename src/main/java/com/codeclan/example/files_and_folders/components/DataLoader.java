@@ -29,6 +29,7 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         User user1 = new User("Stephen");
+        userRepository.save(user1);
 
         Folder folder1 = new Folder("Folder 1", user1);
         folderRepository.save(folder1);
@@ -50,21 +51,21 @@ public class DataLoader implements ApplicationRunner {
         File file6 = new File("file6", ".exe", "50mb", folder3);
         fileRepository.save(file6);
 
-        user1.addFolder(folder1);
-        user1.addFolder(folder2);
-        user1.addFolder(folder3);
-        userRepository.save(user1);
-
-        folder1.addFile(file1);
-        folder1.addFile(file2);
-        folder1.addFile(file3);
-        folderRepository.save(folder1);
-
-        folder2.addFile(file4);
-        folder2.addFile(file5);
-        folderRepository.save(folder2);
-
-        folder3.addFile(file6);
-        folderRepository.save(folder3);
+//        user1.addFolder(folder1);
+//        user1.addFolder(folder2);
+//        user1.addFolder(folder3);
+//        userRepository.save(user1);
+//
+//        folder1.addFile(file1);
+//        folder1.addFile(file2);
+//        folder1.addFile(file3);
+//        folderRepository.save(folder1);
+//
+//        folder2.addFile(file4);
+//        folder2.addFile(file5);
+//        folderRepository.save(folder2);
+//
+//        folder3.addFile(file6);
+//        folderRepository.save(folder3);
     }
 }
